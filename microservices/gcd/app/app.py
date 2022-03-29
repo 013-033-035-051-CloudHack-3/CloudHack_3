@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 import math
 
 app = Flask(__name__)
+app.secret_key = 'thisisjustarandomstring'
 api = Api(app)
 
 class GCD(Resource):

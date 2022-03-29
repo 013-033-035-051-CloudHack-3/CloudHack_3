@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, redirect
 
-#import webbrowser
+import webbrowser
 import requests
 import os
 
@@ -8,44 +8,44 @@ app = Flask(__name__)
 app.secret_key = 'thisisjustarandomstring'
 
 def add(n1, n2):
-    api_url = "http://localhost:5051/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5051/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
     #webbrowser.open(api_url, new=2)
 
 def minus(n1, n2):
-    api_url = "http://localhost:5052/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5052/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
 
 def multiply(n1, n2):
-    api_url = "http://localhost:5053/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5053/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
 
 def divide(n1, n2):
-    api_url = "http://localhost:5054/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5054/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
 
 def gcd(n1, n2):
-    api_url = "https://localhost:5055/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5055/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
 
 def lcm(n1, n2):
-    api_url = "http://localhost:5056/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5056/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
     
 def exponent(n1, n2):
-    api_url = "http://localhost:5057/" + str(n1) + "/" + str(n2)
+    api_url = "http://host.docker.internal:5057/" + str(n1) + "/" + str(n2)
     response = requests.get(api_url)
     result = response.json()['result']
     return result
