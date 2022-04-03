@@ -7,17 +7,17 @@
 3) Advit Gandhi - PES1UG19CS035
 4) Amar Prakash Patil - PES1UG19CS051
 
-## Problem Statement 3 - Breaking Down Monolith
+## Problem Statement 3 - Breaking Down A Monolith
 
 An arithmetic operations calculator enclosed in a monolithic architecture was provided, with the primary goal of converting it to a microservices-oriented architecture.
 
 ## Requirements
 
-python
-docker
-flask
-flask-restful
-requests
+python <br>
+docker <br>
+flask <br>
+flask-restful <br>
+requests <br>
 
 ## Tasks
 
@@ -49,16 +49,18 @@ Docker-compose file updated to recognise the newly added Flask applications as s
 
 ## Steps to Run :
 
-Go to the microservices directory
-Do the command docker-compose build
-Then docker-compose run
-Go to the web browser and open localhost:5050 to access the landing page
-Choose any 2 numbers and an arithmetic operation and click submit, after which the result will be displayed on the same page
-Internally, the landing-page communicates with all the arithmetic operations flask apps via REST APIs which can also be accessed via the following URLs (num1 and num2 refer to any valid number):
-Addition : localhost:5051/num1/num2 
-Subtraction : localhost:5052/num1/num2 
-Multiplication : localhost:5053/num1/num2 
-Division : localhost:5054/num1/num2 
-GCD : localhost:5055/num1/num2 
-LCM : localhost:5056/num1/num2 
-Exponent : localhost:5057/num1/num2 
+Go to the microservices directory <br>
+Execute the command **docker-compose build** <br>
+Then execute **docker-compose run** <br>
+Go to the web browser and open **localhost:5050** to access the landing page <br>
+<br>
+Choose any 2 numbers and an arithmetic operation and click submit, after which the result will be displayed on the same page <br>
+Internally, the landing-page communicates with all the arithmetic operations flask apps via REST APIs which can also be accessed via the following URLs (num1 and num2 refer to any valid number): <br>
+<br>
+Addition : localhost:5051/num1/num2 <br>
+Subtraction : localhost:5052/num1/num2 <br>
+Multiplication : localhost:5053/num1/num2 <br>
+Division : localhost:5054/num1/num2 <br>
+GCD : localhost:5055/num1/num2 <br>
+LCM : localhost:5056/num1/num2 <br>
+Exponent : localhost:5057/num1/num2 <br>
