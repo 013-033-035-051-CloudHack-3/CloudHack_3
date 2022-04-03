@@ -8,10 +8,10 @@ api = Api(app)
 
 class GCD(Resource):
     def get(self, num1, num2):
-        result = math.gcd(num1, num2)
+        result = math.gcd(int(num1), int(num2))
         return {'result': result}
 
-api.add_resource(GCD, '/<int(signed=True):num1>/<int(signed=True):num2>')
+api.add_resource(GCD, '/<string:num1>/<string:num2>')
 
 if __name__ == '__main__':
     app.run(

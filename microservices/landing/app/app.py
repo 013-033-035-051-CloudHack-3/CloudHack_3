@@ -55,15 +55,17 @@ def index():
     number_1 = request.form.get('first')
     number_2 = request.form.get('second')
     try:
-        number_1 = int(number_1)
+        number_1 = float(number_1)
     except (ValueError, TypeError) as e:
+        flash(f'The first number \"{number_1}\" is not a valid number. ')
         number_1 = 0.0
     try:
-        number_2 = int(number_2)
+        number_2 = float(number_2)
     except (ValueError, TypeError) as e:
+        flash(f'The second number \"{number_2}\" is not a valid number. ')
         number_2 = 0.0
     operation = request.form.get('operation')
-    result = 0
+    result = 0.0
     if operation == 'add':
         result = add(number_1, number_2)
     elif operation == 'minus':
@@ -73,14 +75,21 @@ def index():
     elif operation == 'divide':
         result = divide(number_1, number_2)
     elif operation == 'gcd':
+        number_1 = round(number_1)
+        number_2 = round(number_2)
         result = gcd(number_1, number_2)
     elif operation == 'lcm':
+        number_1 = round(number_1)
+        number_2 = round(number_2)
         result = lcm(number_1, number_2)
     elif operation == 'exponent':
         result = exponent(number_1, number_2)
-
+    
+    try:
+        result = round(result, 2)
+    except TypeError as e:
+        pass
     flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
-
     return render_template('index.html')
 
 if __name__ == '__main__':

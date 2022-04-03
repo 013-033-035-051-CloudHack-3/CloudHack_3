@@ -8,11 +8,11 @@ api = Api(app)
 
 class LCM(Resource):
     def get(self, num1, num2):
-        temp = math.gcd(num1, num2)
-        result = (num1/temp) * num2
+        temp = math.gcd(int(num1), int(num2))
+        result = (float(num1)/temp) * float(num2)
         return {'result': result}
 
-api.add_resource(LCM, '/<int(signed=True):num1>/<int(signed=True):num2>')
+api.add_resource(LCM, '/<string:num1>/<string:num2>')
 
 if __name__ == '__main__':
     app.run(

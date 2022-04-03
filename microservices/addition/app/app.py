@@ -7,10 +7,10 @@ api = Api(app)
 
 class Addition(Resource):
     def get(self, num1, num2):
-        result = int(num1) + int(num2)
+        result = float(num1) + float(num2)
         return {'result': result}
 
-api.add_resource(Addition, '/<int(signed=True):num1>/<int(signed=True):num2>')
+api.add_resource(Addition, '/<string:num1>/<string:num2>')
 
 if __name__ == '__main__':
     app.run(

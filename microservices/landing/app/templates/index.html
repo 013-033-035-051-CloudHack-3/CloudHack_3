@@ -1,13 +1,17 @@
 <html>
+   <head>
+	  <title> Microservice Calculator </title>
+	  <link rel="icon" type="image/png" href="/favicon.png"/>
+   </head>	  
    <body>
-      <h1>Arithmetic Microservices</h1>
+      <h1 style="text-align:center;"> Arithmetic Microservices </h1>
       <form action="" method="POST">
          <!-- Hint 1: What if input "first" and "second" had default values? -->
-         Enter the First number : <input type="number" name="first">
+         <p style="text-align:center;"> Enter the First number : <input type="number" step="any" name="first">
          <br>
-         Enter the Second number: <input type="number" name="second">
-         <br>
-         Enter Operation: <select id="op" name="operation">
+         Enter the Second number: <input type="number" step="any" name="second">
+         <br> </p>
+         <p style="text-align:center;"> Enter Operation: <select id="op" name="operation">
             <option value="add">Addition</option>
             <option value="minus">Subtraction</option>
             <option value="multiply">Multiplication</option>
@@ -22,5 +26,6 @@
         {% for message in get_flashed_messages() %}
          {{message}}
       {% endfor %}
+	  </p>
    </body>
 </html>
